@@ -1,0 +1,16 @@
+li {
+    /* background-color: antiquewhite; */
+    width: 500px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: space-between;
+}
+
+.checkBox{
+    width: 50px;
+}
+
+li span {
+    /* background-color: aqua; */
+    margin-left: 20px;
+}
