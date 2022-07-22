@@ -12,17 +12,17 @@ const KEY = "secreatTodo"
 function App() {
   const [items, setItems] = useState( JSON.parse(localStorage.getItem(KEY)) || []) // {id:'str', title: 'str', checked: Bool }
   const [inputText, setInputText] = useState('')
-  const [input1Text, setInput1Text] = useState('')
+//   const [input1Text, setInput1Text] = useState('')
 
-  const searchGithub =(e) => {
-e.preventDefault()
-    fetch(`https://api.github.com/users/${input1Text}`)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
+//   const searchGithub =(e) => {
+// e.preventDefault()
+//     fetch(`https://api.github.com/users/${input1Text}`)
+//     .then(res => res.json())
+//     .then(data => {
+//       console.log(data)
       
-    })
-  }
+//     })
+//   }
 
   useEffect(() => {
     storeitemToLocal()
@@ -109,10 +109,10 @@ e.preventDefault()
         <button type="submit">+ Add List</button>
       </form>
 
-      <form onSubmit={searchGithub}>
+      {/* <form onSubmit={searchGithub}>
         <input value={input1Text} type="text" onChange={(e) => setInput1Text(e.target.value)} />
         <button type="submit">+ search</button>
-      </form>
+      </form> */}
       <ul>
         {items.map((v) => (<ListItem cancelEdit={cancelEdit} updateItem={updateItem} editItem={editItem} key={v.id} item={v} toggleItem={toggleItem} deleteItem={deleteItem} />))}
       </ul>
